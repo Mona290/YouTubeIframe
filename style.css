@@ -1,0 +1,86 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f8f8;
+  }
+  
+  .youtube-logo {
+    height: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+  }
+  
+  .search-input {
+    width: 70%;
+    font-size: inherit;
+    padding: .3em;
+    border: 1px solid #777;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .search-btn {
+    padding: .3em;
+    border: 1px solid #777;
+    background-color: #f8f8f8;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container take up the full height of the viewport */
+    background-color: #f0f0f0;
+  }
+  
+  .video-content {
+    width: 640px; /* Width of the video player */
+  }
+  
+  .sidebar-content {
+    margin-left: 20px; /* Space between sidebar and video player */
+  }
+  
+  #player {
+    height: 360px; /* Adjust video player height */
+    width: 100%;
+  }
+  
+  .footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  

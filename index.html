@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Video Player</title>
+  <!-- Include necessary stylesheets and scripts -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#">
+          <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
+        </a>
+        <form class="search-bar">
+          <input class="search-input" type="search" placeholder="Search" aria-label="Search" />
+          <button type="submit" class="search-btn">
+            <img src="magnify.svg" />
+          </button>
+
+
+    <div class="video-content">
+        <div class="sidebar-content">
+          <!-- YouTube Player -->
+          <div id="player"></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <p>&copy; 2023 YourWebsiteName. All Rights Reserved.</p>
+        </div>
+      </footer>
+
+  <!-- Include the YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    let videoId = 'XHYfi5hQC3E'; // Replace with your YouTube video ID
+    let apiKey = 'AIzaSyAWqzf9LkRVu1TvWaVxAYt8RSisrzmeLq8'; // Replace with your YouTube API key
+
+    let player; // Variable to hold the YouTube player instance
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // The player is ready to receive API calls
+      console.log('Player is ready');
+
+      // Example: Start playing the video when player is ready
+      player.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+      // Listen for state changes such as video play, pause, ended, etc.
+      if (event.data === YT.PlayerState.PLAYING) {
+        // Video is playing
+        console.log('Video is playing');
+      } else if (event.data === YT.PlayerState.PAUSED) {
+        // Video is paused
+        console.log('Video is paused');
+      } else if (event.data === YT.PlayerState.ENDED) {
+        // Video has ended
+        console.log('Video has ended');
+      }
+    }
+  </script>
+</body>
+</html>
